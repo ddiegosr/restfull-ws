@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  mysql-local.app:
+    image: ambientum/mysql:5.7
+    container_name: mysql-local.app
+    volumes:
+      - ./mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=dbtestes
+      - MYSQL_USER=local
+      - MYSQL_PASSWORD=local
